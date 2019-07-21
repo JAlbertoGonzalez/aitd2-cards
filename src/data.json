@@ -1,0 +1,76 @@
+{
+    "cards": [
+        {
+            "n": "Ten of Spades",
+            "r": "Queen of Spades",
+            "c": "GYRG_YROB_PRPYGY_BYBOR_GG_P_YORYBOGR",
+            "f": "CSHS_CHCD_SHCSDH_SSHCD_HD_S_SDSHDHCS"
+        },
+        {
+            "n": "Jacks of Spades",
+            "r": "Eight of Clubs",
+            "c": "P_GPYGGY_OBRO_PRGPP_BOYORG_P_BPOYRGP",
+            "f": "D_SHCHDH_CSHH_SDHSD_SHSDSH_D_HCSDHCS"
+        },
+        {
+            "n": "Ace of Diamonds",
+            "r": "Eight of Spades",
+            "c": "OGPB_OBYO_PGPOGR_ORY_P_GO_B_OYGPYGPR",
+            "f": "CSHS_CHCD_SHCSDH_SSH_D_HD_S_SDSHDHCS"
+        },
+        {
+            "n": "Nine of Clubs",
+            "r": "King of Hearts",
+            "c": "R_BGPYBY_ORGO_PYBOY_B_GYBR_O_ROYBPYB",
+            "f": "D_SHCHDH_CSHH_SDHSC_S_SDSH_D_HCSDHCS"
+        },
+        {
+            "n": "Six of Hearts",
+            "r": "Queen of Hearts",
+            "c": "RYGBR_OBR_YPYP_OB_RBYRGYYO_OBO_RYBRY",
+            "f": "DSCSH_HDH_SDHC_CS_SHCDSHSD_SSS_HHDCD"
+        },
+        {
+            "n": "Jacks of Clubs",
+            "r": "Ace of Hearts",
+            "c": "_YPBOPPO_GYB_GR_POYPBYGRGOG_PBPYPOG_",
+            "f": "_HSHHDDD_HSH_CS_HHDSSHSDCHC_SHCSSCD_"
+        },
+        {
+            "n": "Four of Diamonds",
+            "r": "King of Diamonds",
+            "c": "BPGB_YROYPOBYGB_RYBO_OBP_YBGY_ORP_BO",
+            "f": "SDHS_HDHSCSDSCH_CDCD_HCC_CDSH_DCH_HD"
+        },
+        {
+            "n": "Five of Spades",
+            "r": "Two of Diamonds",
+            "c": "O_YPGYYGORBORB_YPGOPG_RY_BYOB_YO_PYO",
+            "f": "H_DCCDSCHCDHHS_CCDSDC_SS_CSCD_SH_DHD"
+        },
+        {
+            "n": "Two of Spades",
+            "r": "Seven of Clubs",
+            "c": "PYOBOPBR_GYRG_P_BORY_R_PP_OPYRBYRGBP",
+            "f": "SCHSCHDH_CSDS_H_CHCD_S_DD_CSHCDHDHCD"
+        },
+        {
+            "n": "Three of Hearts",
+            "r": "Queen of Diamonds",
+            "c": "YBPYRGORG_BOPY_O_PG_B_YGOYPO_BYBGYRO",
+            "f": "HCDCSCSDC_DHHS_C_DD_C_SCSDSH_SCHHDCD"
+        },
+        {
+            "n": "King of Spades",
+            "r": "Two of Hearts",
+            "c": "B_G_OBYOPBGRRBRY_PGPORBORB_PYGO_GO_B",
+            "f": "S_C_DDSHCDCHDCHC_SHDSCSCSC_CHDS_HD_D"
+        },
+        {
+            "n": "Queen of Clubs",
+            "r": "Three of Diamond",
+            "c": "OG_B_YYBRGRGB_YPBYPGOBGOYBR_YPG_YO_B",
+            "f": "DD_S_CSSHCDSS_DCCHDDCHHCSDC_CHC_HD_D"
+        }
+    ]
+}
