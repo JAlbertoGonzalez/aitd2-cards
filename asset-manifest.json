@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/aitd2-cards/static/css/main.cfda8877.chunk.css",
+    "main.js": "/aitd2-cards/static/js/main.bffd9454.chunk.js",
+    "main.js.map": "/aitd2-cards/static/js/main.bffd9454.chunk.js.map",
+    "runtime~main.js": "/aitd2-cards/static/js/runtime~main.4bd81248.js",
+    "runtime~main.js.map": "/aitd2-cards/static/js/runtime~main.4bd81248.js.map",
+    "static/css/2.22a7d4ef.chunk.css": "/aitd2-cards/static/css/2.22a7d4ef.chunk.css",
+    "static/js/2.53287691.chunk.js": "/aitd2-cards/static/js/2.53287691.chunk.js",
+    "static/js/2.53287691.chunk.js.map": "/aitd2-cards/static/js/2.53287691.chunk.js.map",
+    "index.html": "/aitd2-cards/index.html",
+    "precache-manifest.4fbb1b77bbcfbc42ef4a3bfc27a5c47d.js": "/aitd2-cards/precache-manifest.4fbb1b77bbcfbc42ef4a3bfc27a5c47d.js",
+    "service-worker.js": "/aitd2-cards/service-worker.js",
+    "static/css/2.22a7d4ef.chunk.css.map": "/aitd2-cards/static/css/2.22a7d4ef.chunk.css.map",
+    "static/css/main.cfda8877.chunk.css.map": "/aitd2-cards/static/css/main.cfda8877.chunk.css.map"
+  }
+}
