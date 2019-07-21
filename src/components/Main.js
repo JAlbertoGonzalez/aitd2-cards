@@ -129,21 +129,14 @@ class Main extends React.Component {
             <p>{this.state.firstCard} over {this.state.overCard},<br />Hole number: {this.state.hole}</p>
             <h3>Result: {this.state.resultString}</h3>
             <p>First card:</p>
-            {this.state.cardNames.map(cardName => {
-                return <button onClick={() => {
-                    this.setState({
-                        firstCard: cardName
-                    });
-                }}>{cardName}</button>
-            })}
+            <select onChange={(e) => { this.setState({ firstCard: e.target.value }); }}>
+                {this.state.cardNames.map(cardName => <option>{cardName}</option>)}
+            </select>
             <p>Over:</p>
-            {this.state.cardNames.map(cardName => {
-                return <button onClick={() => {
-                    this.setState({
-                        overCard: cardName
-                    });
-                }}>{cardName}</button>
-            })}
+            <select onChange={(e) => { this.setState({ overCard: e.target.value }); }}>
+                {this.state.cardNames.map(cardName => <option>{cardName}</option>)}
+            </select>
+
             <p>Hole number</p>
 
             {this.state.holes.map(number => <button onClick={() => {
