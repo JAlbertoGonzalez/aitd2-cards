@@ -3,14 +3,14 @@ import data from '../data.json'
 import { colorKeys, colorNames, figureKeys, figureNames, holes } from './constants'
 
 function Main() {
-    const [cardNames, setCardNames] = useState([])
-    const [firstCard, setFirstCard] = useState(null)
-    const [overCard, setOverCard] = useState(null)
+    const [cardNames, setCardNames] = useState<string[]>([])
+    const [firstCard, setFirstCard] = useState<string>('')
+    const [overCard, setOverCard] = useState<string>('')
     const [hole, setHole] = useState(0)
     const [resultString, setResultString] = useState('')
 
     useEffect(() => {
-        let cardNames = [];
+        let cardNames: string[] = [];
         data.cards.map(obj => {
             cardNames.push(obj.n);
             cardNames.push(obj.r);
@@ -21,7 +21,7 @@ function Main() {
         setCardNames(cardNames)
     }, [])
 
-    function reverseString(str) {
+    function reverseString(str: string) {
         var newString = "";
         for (var i = str.length - 1; i >= 0; i--) { newString += str[i]; }
         return newString;
@@ -37,6 +37,10 @@ function Main() {
             let _overCard = data.cards.find(element => {
                 return element.n === overCard || element.r === overCard;
             });
+
+            if (!_firstCard || !_overCard) {
+                return
+            }
 
             var firstCardColors = _firstCard.c;
             // var firstCardFigures = firstCard.f;
