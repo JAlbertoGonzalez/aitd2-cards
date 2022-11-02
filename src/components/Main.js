@@ -1,43 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import data from '../data.json'
-
-const colorNames = new Map([
-    ['B', 'Blue'],
-    ['Y', 'Yellow'],
-    ['P', 'Purple'],
-    ['R', 'Red'],
-    ['O', 'Orange'],
-    ['G', 'Green']
-]);
-
-const colorKeys = new Map([
-    ['Y', 'F6'],
-    ['G', 'F7'],
-    ['B', 'F8'],
-    ['P', 'F9'],
-    ['O', 'F10'],
-    ['R', 'F5+F10'],
-]);
-
-const figureNames = new Map([
-    ['C', 'Clubs'],
-    ['S', 'Spades'],
-    ['D', 'Diamonds'],
-    ['H', 'Hearts'],
-]);
-
-const figureKeys = new Map([
-    ['S', 'F1'],
-    ['H', 'F2'],
-    ['D', 'F3'],
-    ['C', 'F4'],
-]);
+import { colorKeys, colorNames, figureKeys, figureNames, holes } from './constants'
 
 function Main() {
     const [cardNames, setCardNames] = useState([])
     const [firstCard, setFirstCard] = useState(null)
     const [overCard, setOverCard] = useState(null)
-    const [holes, setHoles] = useState([1, 2, 3, 4, 5, 6])
     const [hole, setHole] = useState(0)
     const [resultString, setResultString] = useState('')
 
