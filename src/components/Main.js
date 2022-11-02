@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import data from '../data.json'
 
 const colorNames = new Map([
@@ -33,21 +33,16 @@ const figureKeys = new Map([
     ['C', 'F4'],
 ]);
 
-class Main extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            cardNames: [],
-            firstCard: null,
-            overCard: null,
-            holes: [1, 2, 3, 4, 5, 6],
-            hole: 0,
-            resultString: ''
-        }
-    }
+function Main() {
+    const [cardNames, setCardNames] = useState([])
+    const [firstCard, setFirstCard] = useState(null)
+    const [overCard, setOverCard] = useState(null)
+    const [holes, setHoles] = useState([1, 2, 3, 4, 5, 6])
+    const [hole, setHole] = useState(0)
+    const [resultString, setResultString] = useState('')
 
-    componentDidMount() {
-        var cardNames = [];
+    useEffect(() => {
+        let cardNames = [];
         data.cards.map(obj => {
             cardNames.push(obj.n);
             cardNames.push(obj.r);
@@ -55,47 +50,44 @@ class Main extends React.Component {
 
         cardNames.sort();
 
-        this.setState({
-            cardNames: cardNames
-        });
-    }
+        setCardNames(cardNames)
+    }, [])
 
-    reverseString(str) {
+    function reverseString(str) {
         var newString = "";
         for (var i = str.length - 1; i >= 0; i--) { newString += str[i]; }
         return newString;
     }
 
-
-    updateCard() {
-        if (this.state.hole > 0 && this.state.firstCard && this.state.overCard) {
+    function updateCard() {
+        if (hole > 0 && firstCard && overCard) {
             // Find cards
 
-            var firstCard = data.cards.find(element => {
-                return element.n === this.state.firstCard || element.r === this.state.firstCard;
+            let _firstCard = data.cards.find(element => {
+                return element.n === firstCard || element.r === firstCard;
             });
-            var overCard = data.cards.find(element => {
-                return element.n === this.state.overCard || element.r === this.state.overCard;
+            let _overCard = data.cards.find(element => {
+                return element.n === overCard || element.r === overCard;
             });
 
-            var firstCardColors = firstCard.c;
+            var firstCardColors = _firstCard.c;
             // var firstCardFigures = firstCard.f;
-            if (firstCard.r === this.state.firstCard) {
-                firstCardColors = this.reverseString(firstCardColors);
-                // firstCardFigures = this.reverseString(firstCardFigures);
+            if (_firstCard.r === firstCard) {
+                firstCardColors = reverseString(firstCardColors);
+                // firstCardFigures = reverseString(firstCardFigures);
             }
 
-            var overCardColors = overCard.c;
-            var overCardFigures = overCard.f;
-            if (overCard.r === this.state.overCard) {
-                overCardColors = this.reverseString(overCardColors);
-                overCardFigures = this.reverseString(overCardFigures);
+            var overCardColors = _overCard.c;
+            var overCardFigures = _overCard.f;
+            if (_overCard.r === overCard) {
+                overCardColors = reverseString(overCardColors);
+                overCardFigures = reverseString(overCardFigures);
             }
 
             // Locate hole
 
             var positionHole = -1;
-            for (let i = 1; i <= this.state.hole; i++) {
+            for (let i = 1; i <= hole; i++) {
                 positionHole = firstCardColors.indexOf('_', positionHole + 1)
             }
 
@@ -112,39 +104,30 @@ class Main extends React.Component {
                 finalString = colorNames.get(resultColor) + " " + figureNames.get(resultFigure) + " (Press " + figureKeys.get(resultFigure) + " " + colorKeys.get(resultColor) + ")";
             }
 
-            if (finalString !== this.state.resultString) {
-                this.setState({
-                    resultString: finalString
-                });
+            if (finalString !== resultString) {
+                setResultString(finalString)
             }
         }
     }
 
-    componentDidUpdate() {
-        this.updateCard();
-    }
+    useEffect(() => updateCard(), [firstCard, overCard, hole])
 
-    render() {
-        return <div>
-            <p>{this.state.firstCard} over {this.state.overCard},<br />Hole number: {this.state.hole}</p>
-            <h3>Result: {this.state.resultString}</h3>
-            <p>First card:</p>
-            <select onChange={(e) => { this.setState({ firstCard: e.target.value }); }}>
-                {this.state.cardNames.map(cardName => <option>{cardName}</option>)}
-            </select>
-            <p>Over:</p>
-            <select onChange={(e) => { this.setState({ overCard: e.target.value }); }}>
-                {this.state.cardNames.map(cardName => <option>{cardName}</option>)}
-            </select>
+    return <div>
+        <p>{firstCard} over {overCard},<br />Hole number: {hole}</p>
+        <h3>Result: {resultString}</h3>
+        <p>First card:</p>
+        <select onChange={(e) => setFirstCard(e.target.value)}>
+            {cardNames.map((cardName, n) => <option key={n}>{cardName}</option>)}
+        </select>
+        <p>Over:</p>
+        <select onChange={(e) => setOverCard(e.target.value)}>
+            {cardNames.map((cardName, n) => <option key={n}>{cardName}</option>)}
+        </select>
 
-            <p>Hole number</p>
+        <p>Hole number</p>
 
-            {this.state.holes.map(number => <button onClick={() => {
-                this.setState({ hole: number });
-
-            }}>{number}</button>)}
-        </div>;
-    }
+        {holes.map((number, n) => <button key={n} onClick={() => setHole(number)}>{number}</button>)}
+    </div>
 }
 
 export default Main;
